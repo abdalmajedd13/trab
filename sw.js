@@ -1,20 +1,3 @@
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open('trab-pwa-v1').then(cache => cache.addAll([
-      './',
-      './index.html',
-      './manifest.json',
-      './icon-192.png',
-      './icon-512.png'
-    ]))
-  );
-  self.skipWaiting();
-});
-self.addEventListener('activate', event => {
-  event.waitUntil(self.clients.claim());
-});
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request, {ignoreSearch: true}).then(resp => resp || fetch(event.request))
-  );
-});
+self.addEventListener('install', e=>{e.waitUntil(caches.open('trab-v1').then(c=>c.addAll(['./','./index.html','./manifest.json','./icon-192.png','./icon-512.png','./og.png'])))});
+self.addEventListener('activate', e=>e.waitUntil(self.clients.claim()));
+self.addEventListener('fetch', e=>{e.respondWith(caches.match(e.request,{ignoreSearch:true}).then(r=>r||fetch(e.request)))})
