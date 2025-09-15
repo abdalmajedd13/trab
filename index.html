@@ -3,46 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الطلاب العرب في طرابزون</title>
+  <meta name="description" content="روابط سريعة للطلاب العرب في طرابزون – بدون علامة مائية" />
   <meta name="theme-color" content="#7a0050"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
-  <title>الطلاب العرب في طرابزون</title>
-  <meta name="description" content="روابط سريعة للطلاب العرب في طرابزون – بدون علامة مائية" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png" sizes="192x192">
   <style>
     :root{
-      --bg:#f8f5f8;           /* خلفية فاتحة */
-      --ink:#2b1730;          /* نص داكن */
-      --brand:#7a0050;        /* لون موف قريب من لقطاتك */
-      --brand-2:#a40069;      /* درجة أفتح للهوفر */
-      --pill:#ffffff;         /* خلفية الأزرار */
-      --ok:#0f9d58;           /* لون نجاح */
-      --danger:#c62828;       /* لون خطأ */
+      --bg:#f8f5f8;
+      --ink:#2b1730;
+      --brand:#7a0050;
+      --brand-2:#a40069;
+      --ok:#0f9d58;
+      --danger:#c62828;
       --radius:18px;
       --shadow:0 6px 18px rgba(0,0,0,.08);
     }
     *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
     body{
       margin:0; background:var(--bg); color:var(--ink);
       font:16px/1.8 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans Arabic", "Noto Kufi Arabic", sans-serif;
+      padding-left:max(0px, env(safe-area-inset-left));
+      padding-right:max(0px, env(safe-area-inset-right));
+      padding-bottom:max(8px, env(safe-area-inset-bottom));
     }
     .wrap{max-width:720px; margin:32px auto 64px; padding:0 16px}
     header{display:grid; place-items:center; text-align:center; margin:8px 0 20px}
     .logo{width:88px; height:88px; border-radius:50%; background:var(--brand); color:#fff; display:grid; place-items:center; font-weight:800; font-size:36px; box-shadow:var(--shadow)}
     h1{margin:14px 0 4px; font-size:28px}
     .sub{opacity:.75; margin-top:-2px}
-
     .section-title{margin:26px 6px 12px; color:var(--brand); font-weight:800}
-
     .links{display:grid; gap:14px}
-    .btn{display:flex; align-items:center; gap:12px; padding:16px 18px; border-radius:999px; background:var(--brand); color:#fff; border:0; text-decoration:none; box-shadow:var(--shadow); transition:.18s ease; font-weight:600}
+    .btn{display:flex; align-items:center; gap:12px; padding:16px 18px; border-radius:999px; background:var(--brand); color:#fff; border:0; text-decoration:none; box-shadow:var(--shadow); transition:.18s ease; font-weight:600; cursor:pointer; min-height:56px}
     .btn:hover{transform:translateY(-1px); background:var(--brand-2)}
     .btn:active{transform:translateY(0)}
     .btn .icon{width:28px; height:28px; display:grid; place-items:center; background:rgba(255,255,255,.12); border-radius:50%}
-
-    /* بطاقات تعليمية صغيرة */
     .note{background:#fff; border-radius:var(--radius); padding:14px 16px; box-shadow:var(--shadow); font-size:14px}
-
-    /* المودال */
     .overlay{position:fixed; inset:0; background:rgba(0,0,0,.5); display:none; place-items:center; z-index:50}
     .overlay.active{display:grid}
     .modal{background:#fff; width:min(96vw,480px); border-radius:16px; padding:20px; box-shadow:var(--shadow)}
@@ -53,14 +52,7 @@
     .action{padding:14px 18px; border-radius:12px; border:0; background:var(--brand); color:#fff; font-weight:700; cursor:pointer}
     .action.secondary{background:#eee; color:#333}
     .msg{margin-top:10px; font-size:14px}
-
     footer{margin-top:36px; text-align:center; opacity:.6}
-      /* تحسين للجوال والأجهزة الصغيرة */
-    html{-webkit-text-size-adjust:100%}
-    @supports(padding:max(0px)){
-      body{padding-left:max(0px, env(safe-area-inset-left)); padding-right:max(0px, env(safe-area-inset-right)); padding-bottom:max(8px, env(safe-area-inset-bottom));}
-    }
-    .btn{min-height:56px}
     @media (max-width:380px){
       h1{font-size:24px}
       .logo{width:72px;height:72px;font-size:30px}
@@ -80,23 +72,10 @@
     <div class="section">
       <h2 class="section-title">منصات التواصل</h2>
       <div class="links" id="socialLinks">
-        <!-- عدّل الروابط أدناه -->
-        <a class="btn" href="https://wa.me/" target="_blank" rel="noopener">
-          <span class="icon">💬</span>
-          <span>واتساب</span>
-        </a>
-        <a class="btn" href="https://facebook.com/" target="_blank" rel="noopener">
-          <span class="icon">📘</span>
-          <span>فيس بوك</span>
-        </a>
-        <a class="btn" href="https://t.me/" target="_blank" rel="noopener">
-          <span class="icon">✈️</span>
-          <span>تلغرام</span>
-        </a>
-        <a class="btn" href="https://instagram.com/" target="_blank" rel="noopener">
-          <span class="icon">📷</span>
-          <span>إنستغرام</span>
-        </a>
+        <a class="btn" href="https://wa.me/" target="_blank" rel="noopener"><span class="icon">💬</span><span>واتساب</span></a>
+        <a class="btn" href="https://facebook.com/" target="_blank" rel="noopener"><span class="icon">📘</span><span>فيس بوك</span></a>
+        <a class="btn" href="https://t.me/" target="_blank" rel="noopener"><span class="icon">✈️</span><span>تلغرام</span></a>
+        <a class="btn" href="https://instagram.com/" target="_blank" rel="noopener"><span class="icon">📷</span><span>إنستغرام</span></a>
       </div>
     </div>
 
@@ -112,7 +91,6 @@
     <div class="section">
       <h2 class="section-title">مجموعات التخصصات (محمّاة برقم الجوال)</h2>
       <div class="links" id="majors">
-        <!-- أمثلة: غيّرها أو زِد عليها -->
         <button class="btn" onclick="openGate('med')"><span class="icon">🩺</span><span>كارادينيز – طب بشري</span></button>
         <button class="btn" onclick="openGate('dent')"><span class="icon">🦷</span><span>كارادينيز – طب أسنان</span></button>
         <button class="btn" onclick="openGate('cs')"><span class="icon">💻</span><span>كارادينيز – هندسة حاسوب/برمجة</span></button>
@@ -120,13 +98,12 @@
       </div>
     </div>
 
-    <p class="note">🔐 ملاحظة: الحماية هنا تعمل داخل المتصفح (Frontend). مناسبة للاستخدام الخفيف فقط. لو أردت حماية قوية فعلية، استخدم خادم/قاعدة بيانات أو Firebase Functions.
-    </p>
+    <p class="note">🔐 الحماية تعمل داخل المتصفح (Frontend). للاستخدام الخفيف. للحماية الأقوى نستعمل خادم/Firebase لاحقًا.</p>
 
     <footer>© جميع الحقوق محفوظة — عبدالمجيد</footer>
   </div>
 
-  <!-- النافذة المنبثقة للتحقق -->
+  <!-- Gate Modal -->
   <div class="overlay" id="overlay" role="dialog" aria-modal="true">
     <div class="modal">
       <h3>أدخل كلمة المرور</h3>
@@ -141,47 +118,38 @@
   </div>
 
   <script>
-    //=====================================
-    // ١) إعداد الروابط والقوائم (عدّل هنا)
-    //=====================================
+    // ===== إعدادات سريعة =====
+    const ACCEPT_LAST9 = true; // true = يقارن آخر 9 أرقام فقط
+    const WHATSAPP_ADMIN = ""; // ضع رابط wa.me للإدمن لإظهار زر طلب إضافة عند الرفض
+
+    // ===== المجموعات وأرقامها (عدّل هنا) =====
     const GROUPS = {
-      // مجموعة عامة محمية بنفس فكرة الأرقام
-      main_students: {
-        url: "https://t.me/+YOUR_MAIN_GROUP", // ضع رابط المجموعة
-        allowedPhones: ["905551234567", "963944000000"]
-      },
-      // التخصصات
-      med:   { url: "https://t.me/+MED_GROUP",   allowedPhones: ["905551234567", "9639XXXXXXXX"] },
-      dent:  { url: "https://t.me/+DENT_GROUP",  allowedPhones: ["90555YYYYYYY"] },
-      cs:    { url: "https://t.me/+CS_GROUP",    allowedPhones: ["90555ZZZZZZZ"] },
-      pharm: { url: "https://t.me/+PHARM_GROUP", allowedPhones: [] },
+      main_students: { url: "https://t.me/+YOUR_MAIN_GROUP", allowedPhones: ["905551234567","963944000000"] },
+      med:   { url: "https://t.me/+MED_GROUP",   allowedPhones: ["905551234567"] },
+      dent:  { url: "https://t.me/+DENT_GROUP",  allowedPhones: ["905551234567"] },
+      cs:    { url: "https://t.me/+CS_GROUP",    allowedPhones: ["905551234567"] },
+      pharm: { url: "https://t.me/+PHARM_GROUP", allowedPhones: ["905551234567"] },
     };
 
-    // تريد إدخال أرقام متعددة بسرعة؟ اكتبها مفصولة بسطر جديد هكذا:
+    // لقوائم كبيرة:
     // allowedPhones: `
     // 905551234567
     // 905551234568
     // 963944000000
     // `.trim().split(/\s+/)
 
-    //=====================================
-    // ٢) منطق الحماية الخفيف (Frontend Gate)
-    //=====================================
+    // ===== منطق الحماية =====
     const overlay = document.getElementById('overlay');
     const phoneInput = document.getElementById('gatePhone');
     const checkBtn = document.getElementById('checkBtn');
     const closeBtn = document.getElementById('closeBtn');
     const msg = document.getElementById('msg');
-
     let currentGroupKey = null;
 
     function normalizePhone(v){
-      return (v||"")
-        .toString()
-        .replace(/[^0-9]/g, '') // أرقام فقط
-        .replace(/^00/, '')     // أزل 00 من البداية
-        .replace(/^0+/, '');    // أزل الأصفار البادئة
+      return (v||"").toString().replace(/[^0-9]/g,'').replace(/^00/,'').replace(/^0+/,'');
     }
+    function last9(v){ v = normalizePhone(v); return v.slice(-9); }
 
     function openGate(groupKey){
       currentGroupKey = groupKey;
@@ -190,31 +158,26 @@
       overlay.classList.add('active');
       setTimeout(()=> phoneInput.focus(), 50);
     }
+    function closeGate(){ overlay.classList.remove('active'); currentGroupKey = null; }
 
-    function closeGate(){
-      overlay.classList.remove('active');
-      currentGroupKey = null;
-    }
-
-    async function handleCheck(){
+    function handleCheck(){
       if(!currentGroupKey) return;
       const group = GROUPS[currentGroupKey];
-      if(!group){ msg.textContent = 'حدث خطأ، المجموعة غير معروفة.'; return; }
-
+      if(!group){ msg.textContent='حدث خطأ، المجموعة غير معروفة.'; return; }
       const entered = normalizePhone(phoneInput.value);
-      if(!entered){ msg.style.color = 'var(--danger)'; msg.textContent = 'الرجاء إدخال رقم جوال صحيح.'; return; }
+      if(!entered){ msg.style.color='var(--danger)'; msg.textContent='الرجاء إدخال رقم جوال صحيح.'; return; }
 
-      const allow = (Array.isArray(group.allowedPhones)? group.allowedPhones: [])
-        .map(normalizePhone)
-        .includes(entered);
+      const list = (Array.isArray(group.allowedPhones)? group.allowedPhones: []).map(p => (ACCEPT_LAST9 ? last9(p) : normalizePhone(p)));
+      const token = ACCEPT_LAST9 ? last9(entered) : normalizePhone(entered);
+      const allow = list.includes(token);
 
       if(allow){
-        msg.style.color = 'var(--ok)';
-        msg.textContent = 'تم التحقق ✔ سيتم تحويلك...';
-        setTimeout(()=> { window.location.href = group.url; }, 600);
+        msg.style.color='var(--ok)';
+        msg.textContent='تم التحقق ✔ سيتم تحويلك...';
+        setTimeout(()=>{ window.location.href = group.url; }, 600);
       }else{
-        msg.style.color = 'var(--danger)';
-        msg.textContent = 'الرقم غير موجود في القائمة. تواصل مع الإدارة لإضافتك.';
+        msg.style.color='var(--danger)';
+        msg.innerHTML='الرقم غير موجود في القائمة.' + (WHATSAPP_ADMIN ? ` <a href="${WHATSAPP_ADMIN}" style="color:#0f9d58;font-weight:700">راسل الإدارة</a>` : '');
       }
     }
 
@@ -223,8 +186,10 @@
     overlay.addEventListener('click', (e)=>{ if(e.target===overlay) closeGate(); });
     phoneInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter') handleCheck(); });
 
-    // إتاحة الدوال للأزرار
-    window.openGate = openGate;
+    // ===== تسجيل Service Worker (PWA) =====
+    if('serviceWorker' in navigator){
+      window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(console.error); });
+    }
   </script>
 </body>
 </html>
